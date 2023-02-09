@@ -1,5 +1,5 @@
 
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 
@@ -34,6 +34,18 @@ def hello_world():
     alltodo = Todo.query.all()
 
     return render_template("index.html", alltodo=alltodo)
+
+
+@app.route('/delete/<int:sno>')
+def delete(sno):
+    url = "http://127.0.0.1:5000/delete/"+str(sno)
+    return redirect(url)
+    # return "Deleting from it wait"
+
+
+@app.route('/update')
+def update(sno):
+    return "updating from it wait"
 
 
 if __name__ == '__main__':

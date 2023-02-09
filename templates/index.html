@@ -119,14 +119,12 @@
             <td>{{todo.desc}}</td>
             <td>@{{todo.date_created}}</td>
             <td>
-              <a href="127.0.0.0/5000/delete/{{todo.id}}" class="btn btn-danger"
-                >Delete</a
-              >
-              <a href="127.0.0.0/5000/update/{{todo.id}}" class="btn btn-danger"
-                >Update</a
-              >
+              <a href="/delete/{{todo.sno}}" type="button" class="btn btn-dark btn-sm mx-1">Delete</button>
+
+              <a href="/update/{{todo.sno}}" type="button" class="btn btn-dark btn-sm mx-1">Update</button>
             </td>
           </tr>
+
           {% endfor %}
         </tbody>
       </table>
